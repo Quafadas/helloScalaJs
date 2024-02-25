@@ -13,6 +13,9 @@ packageW:
 serve:
   $JAVA_HOME/bin/jwebserver -d {{invocation_directory()}}/out -p 8000 &
 
+setup-ide:
+  scala-cli setup-ide .
+
 # Might open a browser in a platform independent way.
 open-browser:
   if [[ "$(uname)" == "Darwin" ]]; then \
