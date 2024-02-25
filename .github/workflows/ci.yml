@@ -35,7 +35,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: page
-          path: out/site/publishDocs.dest
+          path: out
           if-no-files-found: error
   deploy:
     needs: build
