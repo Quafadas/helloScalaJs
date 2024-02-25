@@ -3,11 +3,15 @@ default: package serve open-browser
 
 # Compile the Scala code to JavaScript
 package:
-  scala-cli --power package --js . -o out/hello.js -f
+  scala-cli --power package --js . -o out -f
 
 # Continuously compile the Scala code to JavaScript
 packageW:
-  scala-cli --power package --js . -o out/hello.js -f -w
+  scala-cli --power package --js . -o out -f -w
+
+# Continuously compile the Scala code to JavaScript
+publish:
+  scala-cli --power package --js . -o out -f
 
 # Serve the directory (a background task) out onport 8000
 serve:
