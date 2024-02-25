@@ -2,4 +2,5 @@
 .metals
 .scala-build
 .vscode
-out/hello.js
+out
+node_modules
