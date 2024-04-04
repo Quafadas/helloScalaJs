@@ -12,7 +12,7 @@ def main: Unit =
   )
 
 def interactiveApp =
-  val hiVar = Var("World!")
+  val hiVar = Var("World booya")
   div(
     h1(
       "Hello ",

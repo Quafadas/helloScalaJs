@@ -1,3 +1,5 @@
+outDir := justfile_directory() + "/out"
+
 # Compile, package, serve and open the browser - all in one command
 default: package serve open-browser
 
@@ -12,6 +14,10 @@ packageW:
 # Continuously compile the Scala code to JavaScript
 publish:
   scala-cli --power package --js . -o out -f
+
+# dev mode
+dev:
+  cs launch io.github.quafadas:live-server-scala-cli-js_3:0.0.5 -- {{justfile_directory()}} {{outDir}}
 
 # Serve the directory (a background task) out onport 8000
 serve:
@@ -29,4 +35,3 @@ open-browser:
   elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]]; then \
       start chrome ; \
   fi
-
